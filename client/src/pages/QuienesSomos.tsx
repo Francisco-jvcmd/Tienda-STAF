@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Se puede usar la clase 'container' de Tailwind para centrar el contenido
-const AboutUs = () => {
+const QuienesSomos = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-gray-800 mb-6">Quiénes Somos</h1>
@@ -19,4 +19,4 @@ const AboutUs = () => {
 };
 
 // Se cambió "AboutUs" por "QuienesSomos"
-export default AboutUs;
+export default QuienesSomos;
