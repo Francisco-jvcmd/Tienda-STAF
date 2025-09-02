@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Home from "@/pages/home";
 import About from "@/pages/about";
-import NotFound from "@/pages/not-found";
+import quienes-somos from "@/pages/quienes-somos";
 
 function Router() {
   return (
