@@ -1,8 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
-import path from "path";
-import fs from "fs";
 
 const app = express();
 app.use(express.json());
@@ -31,29 +28,14 @@ app.use((req, res, next) => {
         logLine = logLine.slice(0, 79) + "…";
       }
 
-      log(logLine);
+      // Reemplazamos la función 'log' con 'console.log'
+      // ya que 'log' era una función específica del ambiente de desarrollo.
+      console.log(logLine);
     }
   });
 
   next();
 });
-
-// Corrected function to serve static files reliably on Vercel
-function serveStatic(app: express.Express) {
-  // Use __dirname to get the directory of the compiled server file ('dist').
-  // Then, navigate to the 'public' directory, which contains the client-side build.
-  const distPath = path.join(__dirname, 'public');
-  
-  if (!fs.existsSync(distPath)) {
-    throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`
-    );
-  }
-  app.use(express.static(distPath));
-  app.use("*", (_req, res) => {
-    res.sendFile(path.join(distPath, "index.html"));
-  });
-}
 
 (async () => {
   const server = await registerRoutes(app);
@@ -66,22 +48,19 @@ function serveStatic(app: express.Express) {
     throw err;
   });
 
-  // Importantly, only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
-  } else {
-    serveStatic(app);
-  }
+  // Se eliminó la lógica de 'if/else' que manejaba el entorno de desarrollo.
+  // Vercel se encarga automáticamente de servir los archivos estáticos.
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
+  // SIEMPRE sirve la aplicación en el puerto especificado en la variable de entorno PORT.
+  // Otros puertos están bloqueados. Si no se especifica, se usa el 5000 por defecto.
   const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen(port, () => {
-    log(`serving on port ${port}`);
+  server.listen({
+    port,
+    host: "0.0.0.0",
+    reusePort: true,
+  }, () => {
+    // Reemplazamos la función 'log' con 'console.log'.
+    console.log(`serving on port ${port}`);
   });
 })();
 
