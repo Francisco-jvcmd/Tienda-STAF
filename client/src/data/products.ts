@@ -88,21 +88,21 @@ export const products: Product[] = [
     id: "aseo-1",
     name: "Pasta de Dientes Colgate",
     price: 3.50,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1706520636650-024a369fbcdf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "aseo"
   },
   {
     id: "aseo-2",
     name: "Cepillo de Dientes Colgate",
     price: 2.00,
-    image: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1625834319124-345137437603?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "aseo"
   },
   {
     id: "aseo-3",
-    name: "Jabón Protex",
+    name: "Jabón",
     price: 1.50,
-    image: "https://images.unsplash.com/photo-1585681616639-ac3885ec8155?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1747729495657-0d3d50975a19?q=80&w=678&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "aseo"
   },
 
@@ -111,14 +111,14 @@ export const products: Product[] = [
     id: "salud-1",
     name: "Alcohol",
     price: 4.00,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1626379481874-3dc5678fa8ca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "salud"
   },
   {
     id: "salud-2",
     name: "Mascarillas",
     price: 0.50,
-    image: "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://plus.unsplash.com/premium_photo-1725075088960-49e27adc348e?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "salud"
   }
 ];

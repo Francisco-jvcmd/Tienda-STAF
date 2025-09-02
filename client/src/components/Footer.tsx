@@ -28,14 +28,14 @@ export default function Footer() {
             </h4>
             <p className="text-sm opacity-80" data-testid="text-contact-phone">
               <i className="fab fa-whatsapp mr-2"></i>
-              +593 999 737 852
+              +593 997 320 615
             </p>
           </div>
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-sm opacity-60" data-testid="text-copyright">
-            © 2024 Tienda de Productos STAF. Todos los derechos reservados.
+            Tienda de Productos STAF. Propietario Patricio Apunte
           </p>
         </div>
       </div>
