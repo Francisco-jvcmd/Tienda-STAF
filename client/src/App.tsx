@@ -15,7 +15,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/quienes-somos" component={QuienesSomos} />
-      {/* Puedes agregar más rutas aquí */}
+      {/* Fallback to 404 */}
+      <Route component={() => <div>404 - Página no encontrada</div>} />
     </Switch>
   );
 }
@@ -37,5 +38,3 @@ function App() {
     </QueryClientProvider>
   );
 }
-
-export default App;
