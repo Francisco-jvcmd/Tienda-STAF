@@ -84,3 +84,4 @@ function serveStatic(app: express.Express) {
     log(`serving on port ${port}`);
   });
 })();
+
