@@ -18,5 +18,5 @@ const AboutUs = () => {
   );
 };
 
+// Se cambió "AboutUs" por "QuienesSomos"
 export default AboutUs;
-
