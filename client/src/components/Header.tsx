@@ -12,7 +12,6 @@ export default function Header() {
   const navigation = [
     { href: "/", label: "Inicio" },
     { href: "#productos", label: "Productos" },
-    { href: "/quienes-somos", label: "Quiénes Somos" }
   ];
 
   return (
