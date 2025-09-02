@@ -12,7 +12,7 @@ export default function Header() {
   const navigation = [
     { href: "/", label: "Inicio" },
     { href: "#productos", label: "Productos" },
-    { href: "/QuienesSomos", label: "Quiénes Somos" }
+    { href: "#QuienesSomos", label: "Quiénes Somos" }
   ];
 
   return (
