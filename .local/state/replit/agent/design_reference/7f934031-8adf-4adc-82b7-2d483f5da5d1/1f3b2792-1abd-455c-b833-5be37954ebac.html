@@ -1,0 +1,479 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA DE PRODUCTOS STAF - Ecuador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                    colors: {
+                        background: "var(--background)",
+                        foreground: "var(--foreground)",
+                        card: {
+                            DEFAULT: "var(--card)",
+                            foreground: "var(--card-foreground)",
+                        },
+                        primary: {
+                            DEFAULT: "var(--primary)",
+                            foreground: "var(--primary-foreground)",
+                        },
+                        secondary: {
+                            DEFAULT: "var(--secondary)",
+                            foreground: "var(--secondary-foreground)",
+                        },
+                        muted: {
+                            DEFAULT: "var(--muted)",
+                            foreground: "var(--muted-foreground)",
+                        },
+                        accent: {
+                            DEFAULT: "var(--accent)",
+                            foreground: "var(--accent-foreground)",
+                        },
+                        border: "var(--border)",
+                        ring: "var(--ring)",
+                    },
+                    fontFamily: {
+                        sans: ["var(--font-sans)"],
+                    }
+                },
+            }
+        };
+    </script>
+    <style>
+        :root {
+            --background: hsl(0 0% 100%);
+            --foreground: hsl(222.2 84% 4.9%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(222.2 84% 4.9%);
+            --primary: hsl(214 100% 40%);
+            --primary-foreground: hsl(210 40% 98%);
+            --secondary: hsl(158 64% 52%);
+            --secondary-foreground: hsl(222.2 84% 4.9%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(215.4 16.3% 46.9%);
+            --accent: hsl(24 95% 53%);
+            --accent-foreground: hsl(210 40% 98%);
+            --border: hsl(214.3 31.8% 91.4%);
+            --ring: hsl(214 100% 40%);
+            --radius: 0.5rem;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            margin-top: 16px;
+        }
+
+        .product-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .category-section {
+            scroll-margin-top: 100px;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu.active {
+                display: block;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+            .whatsapp-float i {
+                margin-top: 13px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+
+<!-- @COMPONENT: Header -->
+<header class="bg-card border-b border-border sticky top-0 z-50 shadow-sm">
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-2xl lg:text-3xl font-bold text-primary">TIENDA DE PRODUCTOS STAF</h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#inicio" class="text-foreground hover:text-primary transition-colors font-medium">Inicio</a>
+                <a href="#productos" class="text-foreground hover:text-primary transition-colors font-medium">Productos</a>
+                <a href="#quienes-somos" class="text-foreground hover:text-primary transition-colors font-medium">Quiénes Somos</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="mobile-menu mt-4 pb-4 border-t border-border pt-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#inicio" class="text-foreground hover:text-primary transition-colors font-medium">Inicio</a>
+                <a href="#productos" class="text-foreground hover:text-primary transition-colors font-medium">Productos</a>
+                <a href="#quienes-somos" class="text-foreground hover:text-primary transition-colors font-medium">Quiénes Somos</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- @END_COMPONENT: Header -->
+
+<!-- @COMPONENT: HeroSection -->
+<section id="inicio" class="bg-gradient-to-br from-primary to-blue-700 text-white py-16 lg:py-24">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl lg:text-6xl font-bold mb-6">Bienvenidos a STAF</h2>
+        <p class="text-xl lg:text-2xl mb-8 opacity-90">Tu tienda de confianza para productos de calidad</p>
+        <p class="text-lg mb-8 opacity-80">Ropa, Calzado, Cosméticos, Aseo Personal y Salud</p>
+        <a href="#productos" class="inline-block bg-accent hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            Ver Productos
+        </a>
+    </div>
+</section>
+<!-- @END_COMPONENT: HeroSection -->
+
+<!-- @COMPONENT: ProductsSection -->
+<section id="productos" class="py-16 bg-muted">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12 text-foreground">Nuestros Productos</h2>
+
+        <!-- Ropa Category -->
+        <div class="category-section mb-16">
+            <h3 class="text-2xl lg:text-3xl font-semibold mb-8 text-primary border-b-2 border-primary pb-2">
+                <i class="fas fa-tshirt mr-3"></i>Ropa
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Camiseta Negra -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Camiseta negra básica de algodón -->
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Camiseta Negra" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Camiseta Llana - Negro</h4>
+                        <p class="text-accent text-xl font-bold">$10.00</p>
+                    </div>
+                </div>
+
+                <!-- Camiseta Blanca -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Camiseta blanca básica de algodón -->
+                    <img src="https://pixabay.com/get/gfdd7115938eaf3f11b70bc5f55c41397ddef32e6c31c12641495c2ce19f247125f5eccb2c87fe5d95c8338d1fb16a0776eaf7ee4303b9606477de5cdb2f101f8_1280.jpg" alt="Camiseta Blanca" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Camiseta Llana - Blanco</h4>
+                        <p class="text-accent text-xl font-bold">$10.00</p>
+                    </div>
+                </div>
+
+                <!-- Camiseta Habano -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Camiseta color habano o beige básica -->
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Camiseta Habano" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Camiseta Llana - Habano</h4>
+                        <p class="text-accent text-xl font-bold">$10.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calzado Category -->
+        <div class="category-section mb-16">
+            <h3 class="text-2xl lg:text-3xl font-semibold mb-8 text-primary border-b-2 border-primary pb-2">
+                <i class="fas fa-shoe-prints mr-3"></i>Calzado
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Zapatillas -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Zapatillas deportivas blancas -->
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Zapatillas" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Zapatillas</h4>
+                        <p class="text-accent text-xl font-bold">$35.00</p>
+                    </div>
+                </div>
+
+                <!-- Botas de niña -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Botas coloridas para niña con diseños divertidos -->
+                    <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Botas de niña" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Botas de Niña</h4>
+                        <p class="text-accent text-xl font-bold">$25.00</p>
+                    </div>
+                </div>
+
+                <!-- Chancletas -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Chancletas o sandalias casuales -->
+                    <img src="https://pixabay.com/get/g6fcc8a7be065a2cbe4a18824c568a60e09b45330aee9d2bdb0a530cc6de99e5b4cd9f471abf03a6a3041153bb6e33670aed0ddcfa1a99782c3f1b891e0e51cfc_1280.jpg" alt="Chancletas" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Chancletas</h4>
+                        <p class="text-accent text-xl font-bold">$8.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cosméticos Category -->
+        <div class="category-section mb-16">
+            <h3 class="text-2xl lg:text-3xl font-semibold mb-8 text-primary border-b-2 border-primary pb-2">
+                <i class="fas fa-palette mr-3"></i>Cosméticos
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Labial -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Labial rojo o rosado -->
+                    <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Labial" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Labial</h4>
+                        <p class="text-accent text-xl font-bold">$5.00</p>
+                    </div>
+                </div>
+
+                <!-- Rímel -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Rímel o máscara para pestañas -->
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Rímel" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Rímel</h4>
+                        <p class="text-accent text-xl font-bold">$6.50</p>
+                    </div>
+                </div>
+
+                <!-- Crema CeraVe -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Crema facial hidratante de marca -->
+                    <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Crema CeraVe" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Crema CeraVe</h4>
+                        <p class="text-accent text-xl font-bold">$12.00</p>
+                    </div>
+                </div>
+
+                <!-- Protector Solar -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Protector solar Yanbal -->
+                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Protector Solar Yanbal" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Protector Solar Yanbal</h4>
+                        <p class="text-accent text-xl font-bold">$18.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aseo Personal Category -->
+        <div class="category-section mb-16">
+            <h3 class="text-2xl lg:text-3xl font-semibold mb-8 text-primary border-b-2 border-primary pb-2">
+                <i class="fas fa-hand-sparkles mr-3"></i>Aseo Personal
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Pasta de dientes -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Pasta de dientes Colgate -->
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Pasta de dientes Colgate" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Pasta de Dientes Colgate</h4>
+                        <p class="text-accent text-xl font-bold">$3.50</p>
+                    </div>
+                </div>
+
+                <!-- Cepillo de dientes -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Cepillos de dientes Colgate -->
+                    <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Cepillo de dientes" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Cepillo de Dientes Colgate</h4>
+                        <p class="text-accent text-xl font-bold">$2.00</p>
+                    </div>
+                </div>
+
+                <!-- Jabón -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Jabón antibacterial Protex -->
+                    <img src="https://pixabay.com/get/gc82be93285f2b1d598248620b092311e1e91a9efd49d296f08d38e015082915462fba760cf26fffc2d2332e75281be34d1926e3aa4efc033232394ab92f1f7cd_1280.jpg" alt="Jabón Protex" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Jabón Protex</h4>
+                        <p class="text-accent text-xl font-bold">$1.50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salud Category -->
+        <div class="category-section mb-16">
+            <h3 class="text-2xl lg:text-3xl font-semibold mb-8 text-primary border-b-2 border-primary pb-2">
+                <i class="fas fa-heartbeat mr-3"></i>Salud
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+                <!-- Alcohol -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Alcohol desinfectante en botella -->
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Alcohol desinfectante" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Alcohol</h4>
+                        <p class="text-accent text-xl font-bold">$4.00</p>
+                    </div>
+                </div>
+
+                <!-- Mascarillas -->
+                <div class="product-card bg-card rounded-lg shadow-md overflow-hidden">
+                    <!-- Mascarillas médicas desechables -->
+                    <img src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400" alt="Mascarillas médicas" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="text-lg font-semibold mb-2">Mascarillas</h4>
+                        <p class="text-accent text-xl font-bold">$0.50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: ProductsSection -->
+
+<!-- @COMPONENT: AboutSection -->
+<section id="quienes-somos" class="py-16 bg-background">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8 text-foreground">Quiénes Somos</h2>
+            <div class="bg-card rounded-lg shadow-lg p-8 lg:p-12">
+                <p class="text-lg lg:text-xl leading-relaxed text-muted-foreground mb-6">
+                    <strong class="text-primary">TIENDA DE PRODUCTOS STAF</strong> es una empresa ecuatoriana comprometida con brindar productos de alta calidad a precios accesibles para toda la familia.
+                </p>
+                <p class="text-lg lg:text-xl leading-relaxed text-muted-foreground mb-6">
+                    Nuestra misión es ser la tienda de confianza que satisface las necesidades diarias de nuestros clientes, ofreciendo desde ropa y calzado hasta productos de cuidado personal y salud.
+                </p>
+                <p class="text-lg lg:text-xl leading-relaxed text-muted-foreground">
+                    Con sede en <strong class="text-primary">Pifo, Pichincha</strong>, servimos a toda la comunidad ecuatoriana con dedicación, calidad y los mejores precios del mercado.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: AboutSection -->
+
+<!-- @COMPONENT: Footer -->
+<footer class="bg-foreground text-background py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4 text-secondary">TIENDA DE PRODUCTOS STAF</h3>
+                <p class="text-sm opacity-80">Tu tienda de confianza para productos de calidad</p>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Ubicación</h4>
+                <p class="text-sm opacity-80">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Ecuador, Pichincha, Pifo
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+                <p class="text-sm opacity-80">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    +593 999 737 852
+                </p>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-sm opacity-60">
+                © 2024 Tienda de Productos STAF. Todos los derechos reservados.
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- @END_COMPONENT: Footer -->
+
+<!-- @COMPONENT: WhatsAppFloat -->
+<a href="https://wa.me/593999737852?text=Hola,%20me%20gustaría%20más%20información%20sobre%20los%20productos." 
+   target="_blank" 
+   class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+<!-- @END_COMPONENT: WhatsAppFloat -->
+
+<script>
+    // Mobile menu toggle functionality
+    function toggleMobileMenu() {
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.toggle('active');
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close mobile menu if open
+                const mobileMenu = document.querySelector('.mobile-menu');
+                mobileMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Add scroll effect for header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('shadow-lg');
+        }
+    });
+</script>
+
+</body>
+</html>
