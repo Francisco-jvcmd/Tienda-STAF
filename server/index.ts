@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import path2 from "path";
+import path from "path";
 import fs from "fs";
 
 const app = express();
@@ -38,19 +38,20 @@ app.use((req, res, next) => {
   next();
 });
 
-function serveStatic(app2) {
-  // Corrected the path to point to the build output directory
-  // as defined in vite.config.ts
-  const distPath = path2.resolve(import.meta.dirname, "..", "dist", "public");
+// Corrected function to serve static files reliably on Vercel
+function serveStatic(app: express.Express) {
+  // Use __dirname to get the directory of the compiled server file ('dist').
+  // Then, navigate to the 'public' directory, which contains the client-side build.
+  const distPath = path.join(__dirname, 'public');
   
   if (!fs.existsSync(distPath)) {
     throw new Error(
       `Could not find the build directory: ${distPath}, make sure to build the client first`
     );
   }
-  app2.use(express.static(distPath));
-  app2.use("*", (_req, res) => {
-    res.sendFile(path2.resolve(distPath, "index.html"));
+  app.use(express.static(distPath));
+  app.use("*", (_req, res) => {
+    res.sendFile(path.join(distPath, "index.html"));
   });
 }
 
@@ -65,7 +66,7 @@ function serveStatic(app2) {
     throw err;
   });
 
-  // importantly only setup vite in development and after
+  // Importantly, only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
@@ -83,4 +84,3 @@ function serveStatic(app2) {
     log(`serving on port ${port}`);
   });
 })();
-
