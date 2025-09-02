@@ -1,0 +1,71 @@
+Instrucción:
+
+Crea una aplicación web de una sola página con React y Vite, optimizada para el despliegue en la plataforma Vercel. La aplicación se llamará "TIENDA DE PRODUCTOS STAF" y será completamente responsive.
+
+Estructura y Configuración:
+
+Crea un proyecto de React usando Vite.
+
+La estructura debe incluir carpetas para componentes, activos (assets), y estilos (styles).
+
+Utiliza CSS modular para el diseño y el package.json debe estar configurado para un despliegue sin problemas en Vercel.
+
+Página Principal (Home) y Contenido:
+
+Diseña la página de inicio para mostrar productos organizados por categorías: Ropa, Calzado, Cosméticos, Aseo Personal y Salud.
+
+Cada categoría debe tener un título. Dentro de cada sección, muestra una cuadrícula de productos con su nombre, imagen y precio en dólares.
+
+La IA debe buscar y descargar imágenes representativas de los productos desde internet para incluirlas directamente en la carpeta de activos del proyecto.
+
+Lista de Productos (con Precios y Marcas):
+
+Ropa:
+
+Camisetas llanas (colores: negro, blanco, habano). Precio: $10.00.
+
+Calzado:
+
+Zapatillas. Precio: $35.00.
+
+Botas de niña con dibujos. Precio: $25.00.
+
+Chancletas. Precio: $8.00.
+
+Cosméticos:
+
+Labial. Precio: $5.00.
+
+Rímel. Precio: $6.50.
+
+Crema para piel (marca: CeraVe). Precio: $12.00.
+
+Protector solar (marca: Yanbal). Precio: $18.00.
+
+Aseo Personal:
+
+Pasta de dientes (marca: Colgate). Precio: $3.50.
+
+Cepillos de dientes (marca: Colgate). Precio: $2.00.
+
+Jabón (marca: Protex). Precio: $1.50.
+
+Salud:
+
+Alcohol. Precio: $4.00.
+
+Mascarillas. Precio: $0.50.
+
+Componentes y Funcionalidades Adicionales:
+
+Encabezado: Debe tener el título "TIENDA DE PRODUCTOS STAF" y un menú de navegación con un enlace a la página "Quiénes Somos".
+
+Botón de WhatsApp: Un botón flotante fijo en la esquina inferior derecha. Al hacer clic, debe abrir una nueva pestaña con la URL de WhatsApp para enviar un mensaje al número +593999737852 con el texto predeterminado "Hola, me gustaría más información sobre los productos.".
+
+Página "Quiénes Somos": Crea una página separada con un título y un párrafo descriptivo sobre la misión de la tienda.
+
+Pie de Página (Footer): Debe incluir la ubicación: "Ecuador, Pichincha, Pifo".
+
+Consideraciones Clave para el Despliegue:
+
+El proyecto debe ser fácilmente descargable y compatible con los comandos de build de Vite para un despliegue automático en Vercel. No se deben requerir configuraciones adicionales en Vercel.
