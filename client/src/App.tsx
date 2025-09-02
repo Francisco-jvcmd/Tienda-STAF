@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Home from "@/pages/home";
 import About from "@/pages/about";
-import NotFound from "@/pages/not-found";
 import QuienesSomos from "@/pages/quienes-somos";
 
 function Router() {
@@ -16,8 +15,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/quienes-somos" component={QuienesSomos} />
-      {/* Fallback to 404 */}
-      <Route component={NotFound} />
+      {/* Puedes agregar más rutas aquí */}
     </Switch>
   );
 }
