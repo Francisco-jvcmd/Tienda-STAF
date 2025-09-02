@@ -12,21 +12,21 @@ export const products: Product[] = [
     id: "ropa-1",
     name: "Camiseta Llana - Negro",
     price: 10.00,
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "ropa"
   },
   {
     id: "ropa-2", 
-    name: "Camiseta Llana - Blanco",
+    name: "Camiseta Llana - Blanca",
     price: 10.00,
-    image: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "ropa"
   },
   {
     id: "ropa-3",
-    name: "Camiseta Llana - Habano", 
+    name: "Camiseta Llana - Color Habano", 
     price: 10.00,
-    image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://plus.unsplash.com/premium_photo-1671656349262-1e1d3e09735c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "ropa"
   },
 
@@ -42,14 +42,14 @@ export const products: Product[] = [
     id: "calzado-2",
     name: "Botas de Niña con Dibujos",
     price: 25.00,
-    image: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1583615627073-0067376169cc?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "calzado"
   },
   {
     id: "calzado-3",
     name: "Chancletas",
     price: 8.00,
-    image: "https://images.unsplash.com/photo-1506629905607-c60c34b39ba8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1659963970293-b12cfeb286c5?q=80&w=878&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "calzado"
   },
 
@@ -65,21 +65,21 @@ export const products: Product[] = [
     id: "cosmeticos-2",
     name: "Rímel",
     price: 6.50,
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://plus.unsplash.com/premium_photo-1678377960130-bb70ffeb1cd8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "cosmeticos"
   },
   {
     id: "cosmeticos-3",
-    name: "Crema para Piel CeraVe",
+    name: "Crema Facial",
     price: 12.00,
-    image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1585232350744-974fc9804d65?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "cosmeticos"
   },
   {
     id: "cosmeticos-4",
-    name: "Protector Solar Yanbal",
+    name: "Protector Solar",
     price: 18.00,
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    image: "https://images.unsplash.com/photo-1598662957563-ee4965d4d72c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     category: "cosmeticos"
   },
 
