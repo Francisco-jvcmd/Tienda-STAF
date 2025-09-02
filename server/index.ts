@@ -1,6 +1,8 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import path2 from "path";
+import fs from "fs";
 
 const app = express();
 app.use(express.json());
@@ -36,6 +38,22 @@ app.use((req, res, next) => {
   next();
 });
 
+function serveStatic(app2) {
+  // Corrected the path to point to the build output directory
+  // as defined in vite.config.ts
+  const distPath = path2.resolve(import.meta.dirname, "..", "dist", "public");
+  
+  if (!fs.existsSync(distPath)) {
+    throw new Error(
+      `Could not find the build directory: ${distPath}, make sure to build the client first`
+    );
+  }
+  app2.use(express.static(distPath));
+  app2.use("*", (_req, res) => {
+    res.sendFile(path2.resolve(distPath, "index.html"));
+  });
+}
+
 (async () => {
   const server = await registerRoutes(app);
 
@@ -65,3 +83,4 @@ app.use((req, res, next) => {
     log(`serving on port ${port}`);
   });
 })();
+
